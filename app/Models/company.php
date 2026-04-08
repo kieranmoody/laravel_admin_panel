@@ -12,4 +12,9 @@ class company extends Model
     {
         return $this->hasMany(Employee::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

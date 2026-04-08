@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('phone_number')->nullable()->change();
             $table->string('company')->nullable(false)->change();
 
-            $table->foreignId('company_id')->nullable(false)->constrained()->cascadeOnDelete();
         });
     }
 

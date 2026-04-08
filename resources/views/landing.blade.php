@@ -6,7 +6,7 @@
         <div class="col-md-8">
             @if ($companies->count())
                 @foreach($companies as $company)
-                    <a href="{{ route('company.show', $company->slug) }}">
+                    <a href="{{ route('companies.show', $company) }}">
                         <div class="card">
                             <div class="card-header">{{ $company->name }}</div>
 
@@ -21,6 +21,11 @@
                     </a>
                 @endforeach
             @endif
+            <div>
+                <a href="{{ route('companies.create') }}">
+                    +
+                </a>
+            </div>
         </div>
     </div>
 </div>

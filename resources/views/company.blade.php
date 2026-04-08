@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <!--Things Changed-->
-                <form method="POST" action="{{ route('company.update', $company->slug) }}">
+                <form method="POST" action="{{ route('companies.update', $company) }}">
                     @csrf
                     @method('PUT')
                     <!-- Hidden field for company_id -->
@@ -56,6 +56,12 @@
                                         <input class="form-control"
                                             name="employees[{{ $employee->id }}][phone_number]"
                                             value="{{ $employee->phone_number }}">
+                                        <label>
+                                        <input type="checkbox" 
+                                            name="employees[{{ $employee->id }}][delete]" 
+                                            value="1">
+                                            Delete
+                                        </label>
                                     </li>
                                 @empty
                                     <li>No employees for this company yet.</li>
@@ -80,9 +86,27 @@
                             <p><span>*</span> Fields Required</p>
                         </div>
                     </div>
-                </form>
-                <!--Things Changed-->
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </form>             
             </div>
+            <form method="POST" action="{{ route('companies.destroy', $company) }}" class="mt-3">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-danger">
+                    Delete Company
+                </button>
+            </form>
+            <!--Things Changed-->
             <a href="{{ url('/') }}" class="btn btn-secondary mt-3">Back</a>
         </div>
     </div>
