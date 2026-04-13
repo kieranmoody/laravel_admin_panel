@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('description');
             $table->string('website');
+            $table->string('slug')->nullable(false);
             $table->timestamps();
         });
     }

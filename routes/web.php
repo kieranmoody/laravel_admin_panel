@@ -9,7 +9,7 @@ use App\Models\Company;
 
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [CompanyController::class, 'index'])->name('landing');

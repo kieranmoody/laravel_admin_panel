@@ -1,0 +1,46 @@
+a {
+    text-decoration: none !important;
+}
+
+.lift {
+    transition: transform 0.2s ease-in-out;
+}
+
+.lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.company-logo {
+    width:50px; 
+    height:50px; 
+    overflow:hidden;
+}
+
+.company-logo img {
+    width:100%; 
+    height:100%; 
+    object-fit:cover;
+}
+
+#logo-add-preview {
+    width:100px; 
+    height:100px; 
+    overflow:hidden;
+}
+
+.accordion-hidden {
+    display: none;
+}
+.no-js .accordion-hidden {
+    display:block;
+}
+
+.js-enabled #accordion-trigger:hover {
+    cursor: pointer;
+}
+
+#description {
+    resize: none;
+    overflow-y: auto;
+}

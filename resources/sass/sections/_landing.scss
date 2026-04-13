@@ -1,0 +1,18 @@
+#new-company {
+    align-self: center;
+}
+
+.card-height {
+    height: 250px;
+}
+
+.company p {
+    padding: 10px;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .card-height {
+        height: 350px;
+    }
+}

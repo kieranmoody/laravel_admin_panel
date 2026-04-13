@@ -14,7 +14,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = auth()->user()->companies;
+        $companies = auth()->user()->companies()->paginate(10);
         return view('landing', compact('companies'));
     }
 
@@ -39,6 +39,13 @@ class CompanyController extends Controller
             'description' => $request->description,
             'slug' => \Str::slug($request->company_name),
         ]);
+        // Handle logo upload
+        if ($request->hasFile('logo')) {
+            $path = $request->file('logo')->store('logos', 'public');
+
+            $company->logo = $path;
+            $company->save();
+        }
 
         // Create employee if provided
         if ($newEmployee = $request->new_employee) {
@@ -67,9 +74,9 @@ class CompanyController extends Controller
             abort(403);
         }
 
-        $company->load('employees');
+        $employees = $company->employees()->paginate(10);
 
-        return view('company', compact('company'));
+        return view('company', compact('company', 'employees'));
     }
 
     /**
@@ -85,7 +92,26 @@ class CompanyController extends Controller
      */
     public function update(DatabaseValidation $request, Company $company)
     {
-        
+        //dd($request->all(), $request->file('logo'));
+
+        // Handle logo upload
+        if ($request->hasFile('logo')) {
+
+            // Optional: delete old logo
+            if ($company->logo) {
+                \Storage::disk('public')->delete($company->logo);
+            }
+
+            // Store new logo
+            $path = $request->file('logo')->store('logos', 'public');
+
+            // Save to database
+            $company->update([
+                'logo' => $path
+            ]);
+        }
+
+
         if ($company->user_id !== auth()->id()) {
             abort(403);
         }
@@ -95,6 +121,7 @@ class CompanyController extends Controller
             'website' => $request->website,
             'email' => $request->company_email,
             'description' => $request->description,
+            'slug' => \Str::slug($request->company_name),
         ]);
 
         
@@ -148,6 +175,10 @@ class CompanyController extends Controller
             abort(403);
         }
 
+        if ($company->logo) {
+            \Storage::disk('public')->delete($company->logo);
+        }
+        
         $company->delete();
 
         return redirect()
