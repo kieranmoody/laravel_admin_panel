@@ -4,6 +4,24 @@ import './bootstrap';
 document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add("js-enabled");
 
+//light-dark
+
+const toggle = document.getElementById('theme-toggle');
+
+toggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+
+    const isDark = document.documentElement.classList.contains('dark');
+
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const logoInput = document.getElementById('logo-input');
     const editingForm = document.querySelector(".editing-form");
@@ -31,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (editingForm) {
         const formInputs = document.querySelectorAll('.form-control');
         const formButton = document.getElementById("form-button")
+        const deleteButton = document.getElementById("delete-button")
         let isEditing = false;
 
 
@@ -38,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formInputs.forEach(input => {
             input.disabled = true;
         });
+        deleteButton.classList.toggle("disabled");
         formButton.textContent = "Edit Information";
 
         formButton.addEventListener("click", function(e) {
@@ -50,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 formInputs.forEach(input => {
                     input.disabled = false;
                 });
-
+                deleteButton.classList.toggle("disabled");
                 formButton.textContent = "Confirm Changes";
 
             } else {

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->integer('phone_number');
-            $table->string('company');
             $table->foreignId('company_id')->nullable(false)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

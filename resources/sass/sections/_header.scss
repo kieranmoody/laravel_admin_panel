@@ -1,0 +1,13 @@
+//HEADER
+
+.dropdown a:hover {
+    text-decoration: underline !important;
+}
+
+.navbar {
+    background-color: $primary-colour;
+    color: $text-colour;
+}
+.dark .navbar {
+    background-color: $d-primary-colour;
+}

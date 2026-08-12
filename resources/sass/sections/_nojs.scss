@@ -1,0 +1,11 @@
+//NO-JS CHANGES
+.accordion-hidden {
+    display: none;
+}
+.no-js .accordion-hidden {
+    display:block;
+}
+
+.js-enabled #accordion-trigger:hover {
+    cursor: pointer;
+}

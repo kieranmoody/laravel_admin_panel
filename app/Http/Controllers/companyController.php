@@ -92,7 +92,9 @@ class CompanyController extends Controller
      */
     public function update(DatabaseValidation $request, Company $company)
     {
-        //dd($request->all(), $request->file('logo'));
+        if ($company->user_id !== auth()->id()) {
+            abort(403);
+        }
 
         // Handle logo upload
         if ($request->hasFile('logo')) {
@@ -109,11 +111,6 @@ class CompanyController extends Controller
             $company->update([
                 'logo' => $path
             ]);
-        }
-
-
-        if ($company->user_id !== auth()->id()) {
-            abort(403);
         }
 
         $company->update([
@@ -169,11 +166,15 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $company)
+    public function destroy(Request $request, Company $company)
     {
         if ($company->user_id !== auth()->id()) {
             abort(403);
         }
+
+        $request->validate([
+            'password' => ['required', 'current_password'],
+        ]);
 
         if ($company->logo) {
             \Storage::disk('public')->delete($company->logo);

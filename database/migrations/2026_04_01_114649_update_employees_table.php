@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('last_name')->nullable(false)->change();
             $table->string('email')->nullable()->change();
             $table->integer('phone_number')->nullable()->change();
-            $table->string('company')->nullable(false)->change();
 
         });
     }

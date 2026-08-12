@@ -1,46 +1,110 @@
+//BASE CSS
+
+//Broad Strokes
+#app {
+    background-color: $background;
+}
+.dark #app {
+    background-color: $d-background;
+}
+
+.dark main {
+    color: $d-text-colour;
+}
+
 a {
     text-decoration: none !important;
 }
 
-.lift {
-    transition: transform 0.2s ease-in-out;
+.card {
+    border: none;
 }
 
-.lift:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
+//Logo Design
 .company-logo {
     width:50px; 
     height:50px; 
     overflow:hidden;
 }
-
 .company-logo img {
     width:100%; 
     height:100%; 
     object-fit:cover;
 }
 
-#logo-add-preview {
-    width:100px; 
-    height:100px; 
-    overflow:hidden;
-}
-
-.accordion-hidden {
-    display: none;
-}
-.no-js .accordion-hidden {
-    display:block;
-}
-
-.js-enabled #accordion-trigger:hover {
-    cursor: pointer;
-}
-
+//Scrollbar inside description
 #description {
     resize: none;
     overflow-y: auto;
 }
+
+//Pagination Buttons
+.page-link {
+    background-color: $pagination-active;
+}
+.dark .page-link {
+    background-color: $d-pagination-active;
+}
+.page-link:hover {
+    background-color: $pagination-active-h;
+}
+.dark .page-link:hover {
+    background-color: $d-pagination-active-h;
+}
+.pagination-buttons span {
+    background-color: $pagination-active;
+}
+.dark .pagination-buttons span {
+    background-color: $d-pagination-active;
+}
+.pagination-buttons .disabled {
+    background-color: $pagination-buttons;
+    color: $text-colour;
+}
+.dark .pagination-buttons .disabled {
+    background-color: $d-pagination-buttons;
+    color: $d-text-colour;
+}
+
+//Primary Buttons
+.btn-primary {
+    background-color: $button-primary;
+}
+.dark .btn-primary {
+    background-color: $d-button-primary;
+}
+.btn-primary:hover {
+    background-color: $button-primary-h
+}
+.dark .btn-primary:hover {
+    background-color: $d-button-primary-h
+}
+
+//Secondary Buttons
+.btn-secondary {
+    background-color: $button-secondary;
+}
+.dark .btn-secondary {
+    background-color: $d-button-secondary;
+}
+.btn-secondary:hover {
+    background-color: $button-secondary-h;
+}
+.dark .btn-secondary:hover {
+    background-color: $d-button-secondary-h;
+}
+
+//Forms
+.form-control {
+    background-color: $view-inputs !important;
+}
+.form-control:disabled {
+    background-color: #bcbcbd !important;
+}
+
+
+
+
+
+
+

@@ -1,7 +1,53 @@
-// Body
-$body-bg: #f8fafc;
+//Body
+$background: #f8fafc;
+$d-background: #111827;
 
-// Typography
+//Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$text-colour: black;
+$d-text-colour: white;
+
+//Main Colours
+$primary-colour: #5B8DEF;
+$d-primary-colour: #527FE5;
+
+//Panel Colours
+$panel-header: #4F7DD9;
+$d-panel-header: #263E6B;
+$panel-body: #f1f1f1;
+$d-panel-body: #1F2937;
+
+//Buttons
+$pagination-buttons: #F3F6FA;
+$d-pagination-buttons: #374151;
+$pagination-active: #5B8DEF;
+$pagination-active-h: #4378e0;
+$d-pagination-active: #2462f3;
+$d-pagination-active-h: #4a7df1;
+$button-primary: #4F7DD9;
+$d-button-primary: #1255f3;
+$button-primary-h: #3F6CC7;
+$d-button-primary-h: #507de0;
+$button-secondary: #6B7280;
+$d-button-secondary: #6B7280;
+$button-secondary-h: #4B5563;
+$d-button-secondary-h: #9CA3AF;
+
+//Company View Page
+$view-inputs: #FFFFFF;
+$d-view-inputs: #273449;
+
+//Communication
+$success-prompt: #22C55E;
+$d-success-prompt: #34D399;
+$warning-prompt: #F59E0B;
+$d-warning-prompt: #FBBF24;
+$error-prompt: #DC2626;
+$d-error-prompt: #F87171;
+$info-prompt: #3B82F6;
+$d-info-prompt: #3B82F6;
+
+
+

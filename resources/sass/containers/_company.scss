@@ -1,0 +1,45 @@
+//COMPANY PAGE
+
+//Logo Design
+#logo-preview {
+    width:100px; 
+    height:100px; 
+    border-radius:50%; 
+    background:#eee; 
+    overflow:hidden; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+}
+
+#logo-preview img {
+    width:100%; 
+    height:100%; 
+    object-fit:cover; 
+    color:#888;
+}
+
+//Specific Form Designs
+#company_name {
+    color: $text-colour;
+}
+
+//The Employee Accordion
+#accordion-trigger:hover {
+    background-color: $button-primary-h;
+}
+#accordion-trigger.is-open {
+    background-color: $button-primary-h;
+}
+.dark #accordion-trigger:hover {
+    background-color: $d-button-primary-h;
+}
+.dark #accordion-trigger.is-open {
+    background-color: $d-button-primary-h;
+}
+
+//Delete Button
+#delete-button.disabled {
+    background-color: #d14b4b;
+    cursor: default;
+}

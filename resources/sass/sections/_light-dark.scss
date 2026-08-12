@@ -1,0 +1,60 @@
+//LIGHT-DARK RELATED STYLING
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.theme-icon {
+    width: 48px;
+    height: 48px;
+    overflow: visible;
+}
+
+.sun-core,
+.sun-rays,
+.moon {
+    transform-origin: center;
+    transition: all 0.8s cubic-bezier(.4, 0, .2, 1);
+}
+
+.sun-core {
+    fill: #fbbf24;
+}
+
+.sun-rays {
+    stroke: #fbbf24;
+    stroke-width: 4;
+    stroke-linecap: round;
+    opacity: 1;
+}
+
+.moon {
+    fill: #60a5fa;
+    opacity: 0;
+    transform: translateY(25px) scale(0.4);
+}
+
+.dark .sun-core {
+    transform: translateY(22px) scale(0.5);
+    opacity: 0;
+}
+
+.dark .sun-rays {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+.dark .moon {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.theme-icon {
+    transition: transform 1s ease;
+}
+
+.dark .theme-icon {
+    transform: rotate(-90deg);
+}
