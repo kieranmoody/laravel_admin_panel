@@ -27,7 +27,13 @@ class DatabaseValidation extends FormRequest
         'company_email' => 'nullable|email|max:255',
         'description' => 'nullable|string',
 
-        'logo' => ['nullable|image|mimes:jpeg,png,jpg,webp|max:2048|dimensions:min_width=100,min_height=100'],
+        'logo' => [
+            'nullable',
+            'image',
+            'mimes:jpeg,png,jpg,webp',
+            'max:2048',
+            'dimensions:min_width=100,min_height=100',
+        ],
 
         // Existing employees: only validate if first_name or last_name filled
         'employees.*.first_name' => 'required_unless:employees.*.delete,1|string|max:255',

@@ -3,6 +3,7 @@
 //Broad Strokes
 #app {
     background-color: $background;
+    min-height: 100vh;
 }
 .dark #app {
     background-color: $d-background;
@@ -44,6 +45,10 @@ a {
 }
 .dark .page-link {
     background-color: $d-pagination-active;
+    color: rgb(175, 174, 174);
+}
+.dark .page-link.active {
+    color: $d-text-colour;
 }
 .page-link:hover {
     background-color: $pagination-active-h;
