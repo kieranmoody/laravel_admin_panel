@@ -17,7 +17,7 @@
                         <input type="hidden" name="company_id" >
 
                         <div class="card-header">
-                            <input class="form-control card-header fw-bold" name="company_name" type="text" id="company_name" value="{{ old('company_name') }}">
+                            <input class="form-control card-header fw-bold" name="company_name" type="text" id="company_name" placeholder="* Company Name" value="{{ old('company_name') }}">
                         </div>
 
                         <div class="card-body">
@@ -64,11 +64,11 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="d-flex justify-content-between mb-2">
-                                            <div class="col-md-6">
-                                                <input class="form-control" name="new_employee[first_name]" placeholder="First Name" value="{{ old('new_employee.first_name') }}">
+                                            <div class="fn-ln col-md-6">
+                                                <input class="form-control" name="new_employee[first_name]" placeholder="* First Name" value="{{ old('new_employee.first_name') }}">
                                             </div>
-                                            <div class="col-md-6">
-                                                <input class="form-control" name="new_employee[last_name]" placeholder="Last Name" value="{{ old('new_employee.last_name') }}">
+                                            <div class="fn-ln col-md-6">
+                                                <input class="form-control" name="new_employee[last_name]" placeholder="* Last Name" value="{{ old('new_employee.last_name') }}">
                                             </div>
                                         </div>
                                             <div class="mb-2">

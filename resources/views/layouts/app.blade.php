@@ -26,7 +26,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Company-Name Placeholder
+                    FirmBase
                 </a>
 
                 <!-- Navigation -->

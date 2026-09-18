@@ -28,7 +28,7 @@
                         <input type="hidden" name="company_id" value="{{ $company->id }}">
 
                         <div class="card-header">
-                            <input class="form-control card-header fw-bold" name="company_name" type="text" id="company_name" value="{{ $company->name }}">
+                            <input class="form-control card-header fw-bold" name="company_name" type="text" id="company_name" placeholder="* Company Name" value="{{ $company->name }}">
                         </div>
 
                         <div class="card-body">
@@ -87,11 +87,11 @@
                                                     <input type="hidden" name="employees[{{ $employee->id }}][id]" value="{{ $employee->id }}">
                                                     <div class="d-flex justify-content-between mb-3">
                                                         <div class="col-md-6">
-                                                            <label class="form-label">First Name:</label>
+                                                            <label class="form-label">* First Name:</label>
                                                             <input class="form-control" name="employees[{{ $employee->id }}][first_name]" value="{{ $employee->first_name }}">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label class="form-label">Last Name:</label>
+                                                            <label class="form-label">* Last Name:</label>
                                                             <input class="form-control" name="employees[{{ $employee->id }}][last_name]" value="{{ $employee->last_name }}">
                                                         </div>
                                                     </div>
@@ -143,11 +143,11 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="d-flex justify-content-between mb-2">
-                                                <div class="col-md-6">
-                                                    <input class="form-control" name="new_employee[first_name]" placeholder="First Name" value="{{ old('new_employee.first_name') }}">
+                                                <div class="fn-ln col-md-6">
+                                                    <input class="form-control" name="new_employee[first_name]" placeholder="* First Name" value="{{ old('new_employee.first_name') }}">
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <input class="form-control" name="new_employee[last_name]" placeholder="Last Name" value="{{ old('new_employee.last_name') }}">
+                                                <div class="fn-ln col-md-6">
+                                                    <input class="form-control" name="new_employee[last_name]" placeholder="* Last Name" value="{{ old('new_employee.last_name') }}">
                                                 </div>
                                             </div>
                                             <div class="mb-2">

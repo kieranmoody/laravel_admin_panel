@@ -56,6 +56,9 @@ a {
 .dark .page-link:hover {
     background-color: $d-pagination-active-h;
 }
+.pagination-buttons {
+    margin-bottom: 5px;
+}
 .pagination-buttons span {
     background-color: $pagination-active;
 }
@@ -105,6 +108,10 @@ a {
 }
 .form-control:disabled {
     background-color: #bcbcbd !important;
+}
+
+.fn-ln {
+    width: 49%;
 }
 
 
